@@ -1,0 +1,77 @@
+<html>
+<body>
+<head>
+<title>Labada</title>
+</head>
+<h1>SignUp</h1>
+<p>Client Info</p>
+
+<form method="POST" action="/Laundrijess/newlist_url">
+
+  <label>Name:</label>
+  <input 
+    type="text" 
+    id="ClientName"
+    name="ClientName" 
+    size="30" 
+    placeholder="Enter your name"
+  /><br/><br/>
+   <label>Address:</label>
+  <input 
+    type="text" 
+    id="ClientAddress"
+    name="ClientAddress" 
+    size="30" 
+    placeholder="Enter your Address"
+  /><br/><br/>
+   <label>Contact Number:</label>
+  <input 
+    type="text" 
+    id="ClientNumber"
+    name="ClientNumber" 
+    size="30" 
+    placeholder="Enter your ContactNumber"
+  /><br/><br/>
+   <label>Email:</label>
+  <input 
+    type="text" 
+    id="ClientEmail"
+    name="ClientEmail" 
+    size="30" 
+    placeholder="Enter your Email"
+  /><br/><br/>
+   <label>Contact Person:</label>
+  <input 
+    type="text" 
+    id="ClientContact"
+    name="ClientContact" 
+    size="30" 
+    placeholder="Enter your ContactPerson"
+  /><br/><br/>
+  <label>Date:</label>
+  <input 
+    type="Date" 
+    id="Date"
+    name="Date" 
+    size="30" 
+    placeholder="Enter your ContactPerson"
+  /><br/><br/>
+  <input 
+    type="submit" 
+    id="inConfirm" 
+    name="inConfirm" 
+    style="color: red; background-color: lightgrey" 
+    value="Confirm"
+  />
+  {% csrf_token %}
+</form>
+<table id="Table">
+  {% for item in newPerson%}
+  <tr>
+    <td>{{ forloop.counter }}: {{ item.text }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
