@@ -29,15 +29,6 @@ class Client(models.Model):
 	Carrot = models.ForeignKey(S1, default=None, on_delete=models.CASCADE)
 	Char = models.CharField(max_length=800)
 
-class Transaction(models.Model):
-    Referrence_Number = models.Charfield(
-            max_length = 10,
-            blank=True,
-            editable=False,
-            unique=True,
-            default=create_new_ref_number
-        )
-
 class Item(models.Model):
 	title = models.CharField(max_length=800)
 	price = models.FloatField()

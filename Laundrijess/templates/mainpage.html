@@ -5,7 +5,7 @@
 <body bgcolor="khaki">
 <center>
 <h1 style="color:white; font-size:50px; background-color:olive">SignUp</h1>
-<h4>Client Info</h4>
+<a href="areyou.html">Go to Are You</a>
 
 <form method="POST" action="/Laundrijess/newlist_url">
 
@@ -64,6 +64,7 @@
     style="color: red; background-color: lightgrey" 
     value="Confirm"
   />
+  <a href="{% url 'areyou' %}"target="_top">Next</a>
   {% csrf_token %}
 </form>
 <table id="Table">
