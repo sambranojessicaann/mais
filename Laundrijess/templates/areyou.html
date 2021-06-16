@@ -1,32 +1,62 @@
-<!DOCTYPE html>
 <html>
+<head>
+<title>Labada</title>
+</head>
 <body bgcolor="khaki">
-
-<form>
-<h3 style="color:white; font-size:50px; background-color:olive"><center>Are you...</center></h3>
 <center>
-<label class="container">New Client
-  <input type="radio" checked="checked" name="radio">
-  <span class="checkmark"></span>
-</label>
-<br>
-<br>
-<label class="container">Old Client
-  <input type="radio" name="radio">
-  <span class="checkmark"></span>
-</label>
-<br>
-<br>
-<label>ID number</label>
+<h1 style="color:white; font-size:50px; background-color:olive">SignUp</h1>
+
+<form method="POST" action="/Laundrijess/newlist_url">
+
+  <label>Name:</label>
   <input 
     type="text" 
-    id="ClientID"
-    name="ClientID" 
+    id="ClientName"
+    name="ClientName" 
     size="30" 
-    placeholder="Please enter your ID number"
-  /><br><br>
-<br><br>
- <input 
+    placeholder="Enter your name"
+  /><br/><br/>
+   <label>Address:</label>
+  <input 
+    type="text" 
+    id="ClientAddress"
+    name="ClientAddress" 
+    size="30" 
+    placeholder="Enter your Address"
+  /><br/><br/>
+   <label>Contact Number:</label>
+  <input 
+    type="text" 
+    id="ClientNumber"
+    name="ClientNumber" 
+    size="30" 
+    placeholder="Enter your ContactNumber"
+  /><br/><br/>
+   <label>Email:</label>
+  <input 
+    type="text" 
+    id="ClientEmail"
+    name="ClientEmail" 
+    size="30" 
+    placeholder="Enter your Email"
+  /><br/><br/>
+   <label>Contact Person:</label>
+  <input 
+    type="text" 
+    id="ClientContact"
+    name="ClientContact" 
+    size="30" 
+    placeholder="Enter your ContactPerson"
+  /><br/><br/>
+  <label>Date:</label>
+  <input 
+    type="Date" 
+    id="Date"
+    name="Date" 
+    size="30" 
+    placeholder="Enter your ContactPerson"
+  /><br/><br/>
+  <input 
     type="submit" 
     id="inConfirm" 
     name="inConfirm" 
@@ -34,7 +64,15 @@
     value="Confirm"
   />
   <a href="{% url 'equipments' %}"target="_top">Next</a>
-</center>
+  {% csrf_token %}
 </form>
+<table id="Table">
+  {% for item in newPerson%}
+  <tr>
+    <td>{{ forloop.counter }}: {{ item.text }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</center>
 </body>
 </html>
