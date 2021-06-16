@@ -5,9 +5,9 @@ from Laundrijess import views
 
 urlpatterns = [
 	path('admin/',admin.site.urls),
-	path('', views.AreYou, name="first"),
-	path('areyou',views.MainPage, name="second"),
+	path('', views.MainPage, name="first"),
+	path('areyou',views.AreYou, name="second"),
 	path('equipments',views.Equipments, name="third"),
 	path('delivery',views.Delivery, name="forth"),
-	path('payments/',views.Payments, name="fifth"),
+	path('payment',views.Payment, name="fifth"),
 ]
